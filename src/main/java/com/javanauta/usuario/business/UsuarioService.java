@@ -67,7 +67,6 @@ public class UsuarioService {
         Usuario usuario = usuarioConverter.updateUsuario(dto, usuarioEntity);
         //Colocou criptografia na senha
 
-        usuario.setSenha(passwordEncoder.encode(usuario.getPassword()));
 
         // Salvou os dados do usuario convertidos e depois pegou o retorno e converteu para Usuario DTO
         return usuarioConverter.paraUsuarioDTO(usuarioRepository.save(usuario));
