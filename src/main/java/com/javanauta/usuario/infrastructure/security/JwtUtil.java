@@ -10,7 +10,8 @@ import java.util.Base64;
 import java.util.Date;
 
 @Service
-public class JwtUtil {
+public class
+JwtUtil {
 
     // Chave secreta codificada em Base64
     private final String base64SecretKey = "c2VjdXJlLWNoYXJhY3Rlci1zdXBlci1zZWFjdXJlLXdpdGgtYS1saW5nLXRleHQ=";
