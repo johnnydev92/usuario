@@ -4,6 +4,7 @@ package com.javanauta.usuario.business.converter;
 import com.javanauta.usuario.business.DTO.EnderecoDTO;
 import com.javanauta.usuario.business.DTO.TelefoneDTO;
 import com.javanauta.usuario.business.DTO.UsuarioDTO;
+import com.javanauta.usuario.business.UsuarioService;
 import com.javanauta.usuario.infrastructure.Entity.Endereco;
 import com.javanauta.usuario.infrastructure.Entity.Telefone;
 import com.javanauta.usuario.infrastructure.Entity.Usuario;
@@ -106,6 +107,18 @@ public class UsuarioConverter {
         return TelefoneDTO.builder()
                 .numero(telefoneDTO.getNumero())
                 .ddd(telefoneDTO.getDdd())
+                .build();
+    }
+
+    public Usuario updateUsuario(UsuarioDTO usuarioDTO, Usuario entity){
+
+        return Usuario.builder()
+                .nome(usuarioDTO.getNome() != null ? usuarioDTO.getNome() : entity.getNome())
+                .id(entity.getId())
+                .senha(usuarioDTO.getSenha() != null ? usuarioDTO.getSenha() : entity.getSenha())
+                .email(usuarioDTO.getEmail() != null ? usuarioDTO.getEmail() : entity.getEmail())
+                .enderecos(entity.getEnderecos())
+                .telefones(entity.getTelefones())
                 .build();
     }
 
