@@ -15,7 +15,10 @@ import java.util.List;
 @Entity
 @Table(name = "usuario")
 @Builder
+<<<<<<< HEAD
 
+=======
+>>>>>>> b7c80b8b15f0dccab7336d390d658835084ca09c
 public class Usuario implements UserDetails {
 
     @Id

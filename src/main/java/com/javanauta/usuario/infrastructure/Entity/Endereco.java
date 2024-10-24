@@ -10,7 +10,10 @@ import lombok.*;
 @Entity
 @Table(name = "endereco")
 @Builder
+<<<<<<< HEAD
 
+=======
+>>>>>>> b7c80b8b15f0dccab7336d390d658835084ca09c
 public class Endereco {
 
     @Id
@@ -28,9 +31,16 @@ public class Endereco {
     private String estado;
     @Column(name = "cep", length = 9)
     private String cep;
+<<<<<<< HEAD
     @Column (name = "usuario_id")
     private Long usuario_id;
 
 
 
+=======
+    @Column(name = "usuario_id")
+    private Long usuario_id;
+
+
+>>>>>>> b7c80b8b15f0dccab7336d390d658835084ca09c
 }
