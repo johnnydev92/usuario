@@ -1,8 +1,8 @@
 package com.javanauta.usuario.infrastructure.security;
 
 
-import com.javanauta.usuario.infrastructure.Entity.Usuario;
-import com.javanauta.usuario.infrastructure.Repository.UsuarioRepository;
+import com.javanauta.usuario.infrastructure.entity.Usuario;
+import com.javanauta.usuario.infrastructure.repository.UsuarioRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
