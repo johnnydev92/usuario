@@ -2,9 +2,9 @@ package com.javanauta.usuario.controller;
 
 
 
-import com.javanauta.usuario.infrastructure.Exceptions.ConflictException;
-import com.javanauta.usuario.infrastructure.Exceptions.ResourceNotFoundException;
-import com.javanauta.usuario.infrastructure.Exceptions.UnauthorizedException;
+import com.javanauta.usuario.infrastructure.exceptions.ConflictException;
+import com.javanauta.usuario.infrastructure.exceptions.ResourceNotFoundException;
+import com.javanauta.usuario.infrastructure.exceptions.UnauthorizedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
