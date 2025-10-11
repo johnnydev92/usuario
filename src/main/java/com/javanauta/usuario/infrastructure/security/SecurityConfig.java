@@ -47,7 +47,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/v3/api-docs/**", "/swagger-ui/", "/swagger-ui.html").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/auth").permitAll()
+                        .requestMatchers(HttpMethod.GET, "endereco/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/usuario").permitAll()
                         .requestMatchers(HttpMethod.POST, "/usuario/login").permitAll()
                         .requestMatchers("/usuario/**").authenticated()
