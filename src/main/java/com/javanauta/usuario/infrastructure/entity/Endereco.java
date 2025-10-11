@@ -10,7 +10,6 @@ import lombok.*;
 @Entity
 @Table(name = "endereco")
 @Builder
-
 public class Endereco {
 
     @Id
@@ -30,6 +29,7 @@ public class Endereco {
     private String cep;
     @Column (name = "usuario_id")
     private Long usuario_id;
+
 
 
 
