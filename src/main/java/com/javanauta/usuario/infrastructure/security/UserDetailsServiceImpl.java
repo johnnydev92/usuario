@@ -3,13 +3,18 @@ package com.javanauta.usuario.infrastructure.security;
 
 import com.javanauta.usuario.infrastructure.entity.Usuario;
 import com.javanauta.usuario.infrastructure.repository.UsuarioRepository;
+import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration;
+import org.springframework.security.config.annotation.authentication.configurers.userdetails.UserDetailsServiceConfigurer;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
-public class UserDetailsServiceImpl implements UserDetailsService {
+import java.util.Collection;
+import java.util.List;
+
+
+public class UserDetailsServiceImpl implements UserDetails  {
 
     // Repositório para acessar dados de usuário no banco de dados
 
@@ -20,7 +25,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
 
     // Implementação do método para carregar detalhes do usuário pelo e-mail
-    @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         // Busca o usuário no banco de dados pelo e-mail
         Usuario usuario = usuarioRepository.findByEmail(email)
@@ -31,5 +35,20 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 .withUsername(usuario.getEmail()) // Define o nome de usuário como o e-mail
                 .password(usuario.getSenha()) // Define a senha do usuário
                 .build(); // Constrói o objeto UserDetails
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of();
+    }
+
+    @Override
+    public String getPassword() {
+        return "";
+    }
+
+    @Override
+    public String getUsername() {
+        return "";
     }
 }
