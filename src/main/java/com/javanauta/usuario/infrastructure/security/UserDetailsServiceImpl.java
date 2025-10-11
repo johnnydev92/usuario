@@ -1,20 +1,18 @@
 package com.javanauta.usuario.infrastructure.security;
 
 
+
+
 import com.javanauta.usuario.infrastructure.entity.Usuario;
 import com.javanauta.usuario.infrastructure.repository.UsuarioRepository;
-import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration;
-import org.springframework.security.config.annotation.authentication.configurers.userdetails.UserDetailsServiceConfigurer;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Component;
-
-import java.util.Collection;
-import java.util.List;
+import org.springframework.stereotype.Service;
 
 
-public class UserDetailsServiceImpl implements UserDetails  {
+@Service
+public class UserDetailsServiceImpl implements UserDetailsService {
 
     // Repositório para acessar dados de usuário no banco de dados
 
@@ -37,18 +35,5 @@ public class UserDetailsServiceImpl implements UserDetails  {
                 .build(); // Constrói o objeto UserDetails
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
-    }
 
-    @Override
-    public String getPassword() {
-        return "";
-    }
-
-    @Override
-    public String getUsername() {
-        return "";
-    }
 }
