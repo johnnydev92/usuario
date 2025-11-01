@@ -22,7 +22,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ConflictException.class)
     public ResponseEntity<String> handlerConflictException(ConflictException ex){
 
-        return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);  
     }
 
     @ExceptionHandler(UnauthorizedException.class)
