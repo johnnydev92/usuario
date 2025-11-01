@@ -25,13 +25,14 @@ public class ViaCepService {
         }
     }
 
-    private String processarCep(String cep){
+    private String processarCep(String cep) {
+        String cepFormatado = cep.replace(" ", "").
+                replace("-", "");
 
-        String cepFormatado = cep.replace(" ", "").replace("-", "");
 
-        if(!cepFormatado.matches("\\d+") || Objects.equals(cepFormatado.length(), 8)){
-
-            throw new IllegalArgumentException("O cep contem caracteres invalidos. Por favor verifique.");
+        if (!cepFormatado.matches("\\d+")
+                || !Objects.equals(cepFormatado.length(), 8)) {
+            throw new IllegalArgumentException("O cep contém caracteres inválidos, favor verificar");
         }
 
         return cepFormatado;
